@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "complaint-risk"
+version = "0.1.0"
+description = "Predict a complaint outcome from CFPB data available at prediction time."
+readme = "README.md"
+requires-python = ">=3.11"
+# Runtime libraries are added when a module first imports them.
+# The foundation does not import pandas, scikit-learn, or similar yet.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.8",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # import sorting
+    "UP", # pyupgrade
+    "B",  # flake8-bugbear
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["complaint_risk"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

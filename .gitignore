@@ -1,0 +1,56 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Environment files. .env.example is the committed template.
+.env
+.env.*
+!.env.example
+
+# Dataset files. Directory placeholders stay in Git.
+data/raw/**
+data/interim/**
+data/processed/**
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Trained models and other generated artifacts
+artifacts/**
+!artifacts/.gitkeep
+*.joblib
+*.pkl
+*.pickle
+mlruns/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Test, lint, and coverage caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Editors and macOS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
